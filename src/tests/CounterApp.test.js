@@ -19,7 +19,6 @@ describe('Pruebas en <CounterApp/> ', () => {
     test('Deve mostrar el valor por defecto de 100', () =>{
         const valorBase = 100;
         const wrapper = shallow( <CounterApp value= {valorBase} /> );
-
         const counterText = wrapper.find('h2').text();
         expect(counterText).toBe(valorBase.toString());
 
@@ -40,10 +39,8 @@ describe('Pruebas en <CounterApp/> ', () => {
     test('deve de colocar el valor por defecto con el boton reset', () =>{
         const valorBase = 105;
         const wrapper = shallow( <CounterApp value= {valorBase} /> );
-
         wrapper.find('button').at(0).simulate('click');
         wrapper.find('button').at(1).simulate('click');
-
         const counterText = wrapper.find('h2').text();
         expect(counterText).toBe(valorBase.toString());
     });
