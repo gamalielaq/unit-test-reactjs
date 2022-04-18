@@ -1,5 +1,5 @@
 
-import React from "react";
+import React from "react"; //Esta importacion es en las veriones anteriores actualmente ya no es necerario
 import { render } from "@testing-library/react";
 import PrimeraApp from "../PrimeraApp";
 import { shallow } from 'enzyme';
