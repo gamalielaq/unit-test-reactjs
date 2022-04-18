@@ -36,4 +36,15 @@ describe('Pruebas en <CounterApp/> ', () => {
         const counterText = wrapper.find('h2').text();
         expect(counterText).toBe('9');
     });
+
+    test('deve de colocar el valor por defecto con el boton reset', () =>{
+        const valorBase = 105;
+        const wrapper = shallow( <CounterApp value= {valorBase} /> );
+
+        wrapper.find('button').at(0).simulate('click');
+        wrapper.find('button').at(1).simulate('click');
+
+        const counterText = wrapper.find('h2').text();
+        expect(counterText).toBe(valorBase.toString());
+    });
 });
